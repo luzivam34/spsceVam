@@ -1,0 +1,24 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Cadastro de cards{% endblock %}
+
+{% block h1 %}Cadastro de Cards{% endblock %}
+
+{% block menu %}
+
+
+{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    Nome: <input type="text" name="nome" placeholder="Nome" required>
+    Atributo: <input type="text" name="atributo" placeholder="Atributo" required>
+    Nivel: <input type="number" name="nivel" placeholder="Nivel" required>
+    Type Monster: <input type="text" name="typemonster" placeholder="Type Monster" required>
+    Type Card: <input type="text" name="typecard" placeholder="Type Card" required>
+    Ataque: <input type="number" name="ataque" placeholder="ATK" required>
+    Defesa: <input type="number" name="defesa" placeholder="DEF" required>
+    Imagem: <input type="file" name="imagem">
+    <input type="submit" value="Cadastrar">
+</form>
+{% endblock %}

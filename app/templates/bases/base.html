@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}base{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css' ) }}">
+    {% block style %} {% endblock%}
 </head>
 <body>
     <header>
@@ -11,14 +13,27 @@
     </header>
     <br>
     <main>
+        <div>
+            <div>
+                {% block menu %}
+                
+                
+                {% endblock %}
+            </div>
+            <div>
+                {% block content %}
+                
+                
+                {% endblock %}
+            </div>
+        </div>
 
     </main>
     <br>
     <footer>
 
     </footer>
-    <script>
-        window.alert('Ola, seja Bem-vindo');
+    <script src="{{ url_for('static' , filename='js/scripts.js' ) }}">
     </script>    
 </body>
 </html>

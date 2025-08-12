@@ -1,0 +1,49 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Yugioh Card{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_cards.css')}}">
+{% endblock%}
+
+
+{% block h1 %}Yugioh Cards{% endblock %}
+
+{% block menu %}
+
+
+{% endblock %}
+
+{% block content %}
+<div class="conteiner">
+{% for card in cardmonstro %}
+    <table class="table-container">
+        <tr>
+            <td class="tdnome">{{ card.nome }}</td>
+            <td>{{ card.atributo }}</td>       
+        </tr>
+        <tr class="nivel">
+            <th>Nivel:</th>
+            <td colspan="2">{{ card.nivel }}</td>
+        </tr>
+        <tr>        
+            <td colspan="2">
+                {% if card.imagem %}
+                <img src="{{ url_for('static', filename=card.imagem ) }}" alt="{{ card.nome }}">
+                {% else %}
+                <span>Sem escudo</span>
+                {% endif %}
+            </td>
+        </tr>        
+        <tr>         
+            <th colspan="2">ATK / DEF</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{ card.ataque }} / {{ card.defesa }}</td>
+        </tr>
+    </table>
+{% endfor %}
+</div>
+
+
+{% endblock %}
