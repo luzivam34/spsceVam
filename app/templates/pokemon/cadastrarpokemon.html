@@ -1,0 +1,34 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Pokemon{% endblock%}
+
+{% block style %}
+
+{% endblock%}
+
+{% block h1 %}Pokemon{% endblock%}
+
+{% block menu %}
+<a href="/pokemon_list">Pokemon Lista</a>
+{% endblock%}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    Dex:<input type="text" name="dex" placeholder="Dex" required><br>
+    Nome:<input type="text" name="nome" placeholder="Nome" required><br>
+    Type 1: <input type="text" name="typepri" placeholder="Type1" required>/ <input type="text" name="typesec" placeholder="Type2" ><br><br>
+    Nivel:<input type="number" name="nivel" placeholder="Nivel" required><br>
+    HP:<input type="number" name="hp" placeholder="HP" required><br>
+    ATK:<input type="number" name="ataque" placeholder="ATK" required><br>
+    DEF:<input type="number" name="defesa" placeholder="DEF" required><br>
+    At_Esp:<input type="number" name="at_esp" placeholder="At_Esp" required><br>
+    De_Esp:<input type="number" name="de_esp" placeholder="De_Esp" required><br>
+    Velocidade:<input type="number" name="velocidade" placeholder="Velocidade" required><br>
+    Evolução: <input type="text" name="evolution" placeholder="Evolução" required><br>
+    Imagem: <input type="file" name="imagem"><br>
+    <input type="submit" value="Cadastrar" >
+    
+</form>
+
+
+{% endblock%}

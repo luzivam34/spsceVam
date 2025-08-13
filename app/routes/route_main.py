@@ -9,3 +9,7 @@ def index():
 @main_bp.route('/yugioh')
 def yugioh():
     return render_template('yugioh/yugioh.html')
+
+@main_bp.route('/pokemon')
+def pokemon():
+    return render_template('pokemon/pokemon.html')

@@ -1,0 +1,74 @@
+{% extends 'bases/base.html' %}
+
+
+{% block title %} Pokemon {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style_pokemon.css')}}">
+{% endblock %}
+
+{% block h1 %} Pokemon {% endblock %}
+
+{% block menu %}
+<a href="/cadastrar/pokemon">Cadastrar Pokemon</a>
+<a href="/pokemon_list">Lista Pokemon</a>
+{% endblock %}
+
+{% block content %}
+
+<div class='conteiner'>
+    <div class='display_show' >
+        {% if pokemon.imagem %}
+        <img src="{{ url_for('static', filename=pokemon.imagem ) }}" alt="{{ pokemon.nome }}">
+        {% else %}
+        <span>Sem escudo</span>
+        {% endif %}<br>
+    </div>
+    <div class="display_table">
+        <table>
+            <tr>
+                <th>NOME</th>
+                <td>{{ pokemon.nome }}</td>
+            </tr>
+            <tr>
+                <th>TIPO</th>
+                <td>{{ pokemon.typepri }} / {{ pokemon.typesec }}</td>
+
+            </tr>
+            <tr>
+                <th>NIVEL</th>
+                <td>{{ pokemon.nivel }}</td>
+            </tr>
+            <tr>
+                <th>HP</th>
+            <td>{{ pokemon.hp }}</td>
+            </tr>
+            <tr>
+                <th>ATK</th>
+            <td>{{ pokemon.ataque }}</td>
+            </tr>
+            <tr>
+                <th>DEF</th>
+            <td>{{ pokemon.defesa }}</td>
+            </tr>
+            <tr>
+                <th>AT. ESP</th>
+            <td>{{ pokemon.at_esp }}</td>
+            </tr>
+            <tr>
+                <th>DE. ESP</th>
+            <td>{{ pokemon.de_esp }}</td>
+            </tr>  
+            <tr>
+                <th>Velocidade</th>
+            <td>{{ pokemon.velocidade }}</td>
+            </tr>
+        </table>    
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

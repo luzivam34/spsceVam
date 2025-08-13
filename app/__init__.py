@@ -16,9 +16,12 @@ def create_app():
 
     from app.routes.route_main import main_bp
     from app.routes.route_yugioh import yugioh_bp
+    from app.routes.route_pokemon import pokemon_bp
+
 
     app.register_blueprint(main_bp)
     app.register_blueprint(yugioh_bp)
+    app.register_blueprint(pokemon_bp)
 
 
     with app.app_context():

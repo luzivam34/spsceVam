@@ -1,0 +1,32 @@
+
+img {
+    width: 50px;
+}
+a {
+    display: flex;
+}
+.table-org{
+    justify-content: center;
+}
+
+.nomeimg{
+    display: flex;
+    justify-content: center;
+}
+.display_show{
+    justify-content: center;
+    width: 300px;
+    height: 96%;
+}
+.display_show img{
+    width: 94%;
+}
+.display_table{
+    width: 700px;
+    height: 96%;
+}
+.display_table table{
+    text-align: center;
+    width: 94%;
+    height: 96%;
+}

@@ -4,11 +4,27 @@
     border: 1px solid #ccc;
 }
 header {
+    text-align: center;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 main{
     border-radius: 8px;
+}
+.conteiner{
+    display: flex;
+    justify-content: center;
+    height: 95%;
+}
+.menu{
+    margin: 2.5px;
+    width: 30%;
+}
+.display_content{
+    justify-content: center;
+    align-items: center;
+    margin: 2.5px;
+    width: 65%;
 }
 footer {
     border-bottom-left-radius: 8px;

@@ -1,0 +1,83 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Pokemon{% endblock%}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style_pokemon.css')}}">
+{% endblock%}
+
+{% block h1 %}Pokemon Lista{% endblock%}
+
+{% block menu %}
+<div>
+    <div>
+        <a href="/cadastrar/pokemon">Cadastrar Pokemon</a>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div>
+        <a href="/">Início</a>
+    </div>
+</div>
+
+{% endblock%}
+
+{% block content %}
+
+<div class="table-org">
+    
+    <table>
+        <tr>
+            <th>DEX</th>
+            <th>Nome</th>
+            <th>Type</th>
+            <th>Nivel</th>
+            <th>HP</th>
+            <th>ATK</th>
+            <th>DEF</th>
+            <Th>AT_ESP</Th>
+            <th>DE_ESP</th>
+            <th>Velocidade</th>
+            <th>Ações</th>
+
+        </tr>
+        {% for poke in pokemon %}
+        <tr>
+            <td>{{ poke.dex }}</td>
+            
+                <td class="nomeimg">
+                {% if poke.imagem %}
+                <img src="{{ url_for('static', filename=poke.imagem ) }}" alt="{{ poke.nome }}">
+                {% else %}
+                <span>Sem escudo</span>
+                {% endif %}<br>
+                <a href="{{ url_for('pokemon.show_pokemon', id=poke.id) }}">{{ poke.nome }}</a>
+            </td>
+            <td>{{ poke.typepri }} / {{ poke.typesec }}</td>
+            <td>{{ poke.nivel }}</td>
+            <td>{{ poke.hp }}</td>
+            <td>{{ poke.ataque }}</td>
+            <td>{{ poke.defesa }}</td>
+            <td>{{ poke.at_esp }}</td>
+            <td>{{ poke.de_esp }}</td>
+            <td>{{ poke.velocidade }}</td>
+            <td>
+                <form action="{{ url_for('pokemon.excluir_pokemon', id=poke.id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir?')">
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+    
+    
+    {% endfor %}
+  </table>
+</div>
+
+
+
+
+{% endblock%}
