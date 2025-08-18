@@ -15,16 +15,18 @@ main{
     display: flex;
     justify-content: center;
     height: 95%;
+    
 }
 .menu{
     margin: 2.5px;
-    width: 30%;
+    justify-content: left;
+    width: 20%;
 }
 .display_content{
     justify-content: center;
     align-items: center;
     margin: 2.5px;
-    width: 65%;
+    width: 98%;
 }
 footer {
     border-bottom-left-radius: 8px;

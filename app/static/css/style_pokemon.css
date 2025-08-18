@@ -1,32 +1,111 @@
-
-img {
-    width: 50px;
+header{
+    background: rgba(73, 73, 202, 0.795);
 }
 a {
     display: flex;
+    justify-content: center;    
 }
 .table-org{
-    justify-content: center;
-}
-
-.nomeimg{
+    margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(136, 136, 238);
+}
+.table-org table, td{
+    text-align: center;
+    border-radius:5px;
+    height: 50px;
+}
+.table-org img{
+    width: 200px;
+}
+.nomeimg{
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .display_show{
+    margin: 2.5px;
     justify-content: center;
     width: 300px;
-    height: 96%;
+
 }
 .display_show img{
-    width: 94%;
+    width: 300px
 }
 .display_table{
-    width: 700px;
-    height: 96%;
+    margin: 2.5px;
+    padding: 7px;
+
 }
 .display_table table{
+    margin: 2px;
     text-align: center;
-    width: 94%;
-    height: 96%;
+    padding: 10px 15px ;    
+}
+.display_table td {
+    margin: 2px;
+    padding: 7px 30px;
+}
+.Planta{
+    background: green;
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+}
+.Normal {
+    background:#999292;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.Venenoso {
+    background:blueviolet;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#Venenoso{
+    font-size: 18px;
+    color: blueviolet;
+    text-shadow: 1px 2px 2px white;    
+}
+
+#Normal{
+    font-size: 18px;
+    color: black;
+    text-shadow: 1px 2px 2px white; 
+}
+#Voador{
+    font-size: 18px;
+    color: aquamarine;
+    text-shadow: 1px 2px 2px #999292;
+}
+.display_poke img{
+    width: 90px;
+    height: 50px;
+    object-fit: contain;
+}
+.preview {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button_acao {
+    margin: 2px;
+    border: 3px solid #d83232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_acao a{
+    margin: 2.5px;
+}
+.button_acao form{
+    margin: 2.5px;
+}
+footer{
+    background: rgba(73, 73, 202, 0.795);
 }

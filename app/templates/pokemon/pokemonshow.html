@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/style_pokemon.css')}}">
 {% endblock %}
 
+
 {% block h1 %} Pokemon {% endblock %}
 
 {% block menu %}
@@ -16,7 +17,7 @@
 
 {% block content %}
 
-<div class='conteiner'>
+<div class="conteiner {{ pokemon.typepri }}" id="{{ pokemon.typesec }}">
     <div class='display_show' >
         {% if pokemon.imagem %}
         <img src="{{ url_for('static', filename=pokemon.imagem ) }}" alt="{{ pokemon.nome }}">

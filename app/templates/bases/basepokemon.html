@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Document{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css' ) }}">
+    {% block style %} {% endblock%}
+</head>
+<body>
+    <header>
+        <h1>{% block h1 %}Base{% endblock %}</h1>
+    </header>
+    <br>
+    <main>
+        <div class="conteiner">
+            <div class="menu">
+                {% block menu %}
+                
+                
+                {% endblock %}
+            </div>
+            <div class="display_content">
+                {% block content %}
+                
+                
+                {% endblock %}
+            </div>
+        </div>
+
+    </main>
+    <br>
+    <footer>
+
+    </footer>
+    <script src="{{ url_for('static' , filename='js/scripts.js' ) }}">
+    </script>
+</body>
+</html>

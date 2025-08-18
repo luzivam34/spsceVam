@@ -9,7 +9,7 @@ pokemon_bp = Blueprint('pokemon', __name__)
 
 @pokemon_bp.route('/pokemon_list')
 def list_pokemon():
-    pokemon = Pokemon.query.order_by(desc(Pokemon.nivel)).all()
+    pokemon = Pokemon.query.order_by(desc(Pokemon.nivel), desc(Pokemon.ataque), desc(Pokemon.defesa), desc(Pokemon.velocidade)).all()
     return render_template('pokemon/pokemon_list.html',pokemon=pokemon)
 
 @pokemon_bp.route('/pokemon/<int:id>')
@@ -56,3 +56,20 @@ def excluir_pokemon(id):
     db.session.delete(pokemon)
     db.session.commit()
     return redirect(url_for('pokemon.list_pokemon'))
+
+@pokemon_bp.route('/pokemon/editar/<int:id>', methods=['POST','GET'])
+def editar_pokemon(id):
+    pokemon = Pokemon.query.get_or_404(id)
+    if request.method == "POST":
+        pokemon.hp = request.form['hp']
+        pokemon.nivel = request.form['nivel']
+        pokemon.ataque = request.form['ataque']
+        pokemon.defesa = request.form['defesa']
+        pokemon.at_esp = request.form['at_esp']
+        pokemon.de_esp= request.form['de_esp']
+        pokemon.velocidade= request.form['velocidade']
+        
+        db.session.commit()
+        return redirect(url_for('pokemon.list_pokemon'))
+    
+    return render_template('pokemon/editar_pokemon.html', pokemon=pokemon)

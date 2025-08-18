@@ -29,6 +29,13 @@
 {% block content %}
 
 <div class="table-org">
+    <table>
+        <tr>
+            <td>
+                <img id="preview" src="../../static/uploads/pokemons/bulbasaur.png" alt="preview">
+            </td>
+        </tr>
+    </table>
     
     <table>
         <tr>
@@ -46,17 +53,18 @@
 
         </tr>
         {% for poke in pokemon %}
-        <tr>
+        <tr class="{{ poke.typepri }}" id="{{ poke.typesec }}">
             <td>{{ poke.dex }}</td>
             
-                <td class="nomeimg">
+            <td class="nomeimg display_poke">
                 {% if poke.imagem %}
-                <img src="{{ url_for('static', filename=poke.imagem ) }}" alt="{{ poke.nome }}">
+                <img src="{{ url_for('static', filename=poke.imagem ) }}" data-full="{{ url_for('static', filename=poke.imagem ) }}" alt="{{ poke.nome }}">
                 {% else %}
                 <span>Sem escudo</span>
                 {% endif %}<br>
                 <a href="{{ url_for('pokemon.show_pokemon', id=poke.id) }}">{{ poke.nome }}</a>
             </td>
+
             <td>{{ poke.typepri }} / {{ poke.typesec }}</td>
             <td>{{ poke.nivel }}</td>
             <td>{{ poke.hp }}</td>
@@ -65,14 +73,13 @@
             <td>{{ poke.at_esp }}</td>
             <td>{{ poke.de_esp }}</td>
             <td>{{ poke.velocidade }}</td>
-            <td>
+            <td class="button_acao">
+                <a href="{{ url_for('pokemon.editar_pokemon', id=poke.id) }}">Editar</a>
                 <form action="{{ url_for('pokemon.excluir_pokemon', id=poke.id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir?')">
                     <button type="submit">Excluir</button>
                 </form>
             </td>
         </tr>
-    
-    
     {% endfor %}
   </table>
 </div>

@@ -1,0 +1,46 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Pokemon{% endblock%}
+
+{% block style %}
+
+{% endblock%}
+
+{% block h1 %}Pokemon{% endblock%}
+
+{% block menu %}
+<a href="/pokemon_list">Pokemon Lista</a>
+{% endblock%}
+
+{% block content %}
+<table>
+
+    <tr>
+        {% if pokemon.imagem %}
+        <img src="{{ url_for('static', filename=pokemon.imagem ) }}" alt="{{ pokemon.nome }}">
+        {% else %}
+        <span>Sem escudo</span>
+        {% endif %}<br>
+    </tr>
+            <tr>
+                <th>NOME</th>
+                <td>{{ pokemon.nome }}</td>
+            </tr>
+            <tr>
+                <th>TIPO</th>
+                <td>{{ pokemon.typepri }} / {{ pokemon.typesec }}</td>
+
+            </tr>
+</table>
+<form method="POST" enctype="multipart/form-data">
+    Nivel:<input type="number" name="nivel" placeholder="Nivel" value="{{ pokemon.nivel }}"><br>
+    HP:<input type="number" name="hp" placeholder="HP" value="{{ pokemon.hp }}"><br>
+    ATK:<input type="number" name="ataque" placeholder="ATK" value="{{ pokemon.ataque }}"><br>
+    DEF:<input type="number" name="defesa" placeholder="DEF" value="{{ pokemon.defesa }}"><br>
+    At_Esp:<input type="number" name="at_esp" placeholder="At_Esp" value="{{ pokemon.at_esp }}"><br>
+    De_Esp:<input type="number" name="de_esp" placeholder="De_Esp" value="{{ pokemon.de_esp }}"><br>
+    Velocidade:<input type="number" name="velocidade" placeholder="Velocidade" value="{{ pokemon.velocidade }}"><br>
+    <input type="submit" value="Cadastrar" >    
+</form>
+
+{% endblock%}
